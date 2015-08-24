@@ -1,3 +1,8 @@
+eqwewqeqwew
+111111111111111111111111111111
+dasdsadasd
+恶趣味无穷恶趣味 
+一、导入相应的包
 一、导入相应的包
 	1、hibernate安装文件夹中的lib->required中的包
 	2、导入log4j
