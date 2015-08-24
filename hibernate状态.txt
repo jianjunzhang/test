@@ -1,0 +1,29 @@
+hibernate的状态分为
+	1.transient(瞬时状态)：没有被session所管理
+		比如刚刚创建的一个对象  User u = new User(1,"dd","123");
+	2.persistent(持久化状态)：被session所管理了
+		通过save(u),u这时就是persistent(持久化状态)了
+	3.detached(离线状态)：不再数据库中，但是没有被session所管理
+		User user = new User();
+		user.setId(1);
+		数据库里面有id为1的用户，这是user就是detached(离线状态)
+下面的只会发送二条语句，insert和update，commit的时候统一判断的		
+	session = HibernateUtil.openSession();
+	session.beginTransaction();
+	User u = new User();
+	u.setBorn(sdf.parse("1976-2-3"));
+	u.setUsername("zxq");
+	u.setNickname("赵晓八");
+	u.setPassword("123");
+	session.save(u);
+	u.setPassword("222");
+	//该条语句没有意义
+	session.save(u);
+	u.setNickname("赵晓吧");
+	//没有意义
+	session.update(u);
+	u.setBorn(sdf.parse("1988-12-22"));
+	//没有意义
+	session.update(u);
+	session.getTransaction().commit();
+	
