@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="buaa_mavensshibernate4"
+  id="myeclipse.1432092441028"
+  context-root="/buaa_mavensshibernate4"
+  j2ee-spec="6.0"
+  archive="buaa_mavensshibernate4.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+
